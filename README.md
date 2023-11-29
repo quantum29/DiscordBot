@@ -77,7 +77,10 @@ Ensure that your bot is online and responding to commands.
    - Ensure that your bot has the necessary permissions for the commands it will execute.
 
 2. **Command Prefix:**
-   - The bot uses slash commands, so there is no traditional command prefix.
+   - The bot uses slash commands build using the slashCommandBuilderObject provided by Discord.Js.
+
+
+### Commands
 
 3. **Available Commands:**
 
@@ -95,6 +98,9 @@ Ensure that your bot is online and responding to commands.
      - *Description:* Deletes a regular expression check.
      - *Usage:* `/deletergx <regex>`
      - *Example:* `/deletergx \bexample\b`
+
+
+### Events
 
 4. **Custom Events:**
 
