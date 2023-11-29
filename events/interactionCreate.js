@@ -1,29 +1,31 @@
-const { Events } = require('discord.js');
+// Import necessary modules
+const { Events } = require('discord.js')
 
+// Define the module to be exported
 module.exports = {
-	name: Events.InteractionCreate,
-	async execute(interaction) {
-		if (!interaction.isChatInputCommand()) return;
+  // Define the event name
+  name: Events.InteractionCreate,
 
-		const command = interaction.client.commands.get(interaction.commandName);
+  // Define the execute function for the event
+  async execute(interaction) {
+    // Check if the interaction is a chat input command
+    if (!interaction.isChatInputCommand()) return
 
-		if (!command) {
-			console.error(`No command matching ${interaction.commandName} was found.`);
-			return;
-		}
-        try {
-			await command.execute(interaction);
-		} catch (error) {
-			console.error(`Error executing ${interaction.commandName}`);
-			console.error(error);
-		}
-	}
-};
+    // Get the command associated with the interaction commandName
+    const command = interaction.client.commands.get(interaction.commandName)
 
-// client.on(Events.InteractionCreate, async interaction => {
-// 	if (!interaction.isChatInputCommand()) return;
+    // If no command is found, log an error and return
+    if (!command) {
+      console.error(`No command matching ${interaction.commandName} was found.`)
+      return
+    }
 
-// 	if (interaction.commandName === 'ping') {
-// 		await interaction.reply({ content: 'Secret Pong!', ephemeral: true });
-// 	}
-// });
+    // Try executing the command, catch any errors
+    try {
+      await command.execute(interaction)
+    } catch (error) {
+      console.error(`Error executing ${interaction.commandName}`)
+      console.error(error)
+    }
+  },
+}

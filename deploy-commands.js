@@ -11,8 +11,12 @@ for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	commands.push(command.data.toJSON());
 }
+// It reads all the comm
+//and files from the commands directory,
+//  filters those that end with .js, and pushes the JSON representation of each command's data to the commands array.
 
-// Construct and prepare an instance of the REST module
+
+// Construct and prepare an instance of the REST module through this only we update the guild's slash commands with the data from the commands array.
 const rest = new REST({ version: '10' }).setToken(token);
 
 // and deploy your commands!
