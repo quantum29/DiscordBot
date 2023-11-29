@@ -120,7 +120,22 @@ Ensure that your bot is online and responding to commands.
 
 
 
+### Configuration 
 
+/config.json 
+{
+    "token": "YOUR_BOT_TOKEN_GOES_HERE",
+    "clientId": "YOUR_BOT_CLIENT_ID",
+    "guildId": "YOUR_DISCORD_SERVER_ID",
+    "logChannelId": "YOUR_LOG_CHANNEL_ID"
+}
+
+Replace the placeholder values:
+
+Replace "YOUR_BOT_TOKEN_GOES_HERE" with the actual token for your Discord bot.
+Replace "YOUR_BOT_CLIENT_ID" with the client ID of your Discord bot.
+Replace "YOUR_DISCORD_SERVER_ID" with the ID of the Discord server (guild) where your bot will operate.
+Replace "YOUR_LOG_CHANNEL_ID" with the ID of the channel where you want log messages and notifications to be sent.
 
 
 
